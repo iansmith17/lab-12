@@ -1,7 +1,9 @@
 const google = require('./google');
+const github = require('./github');
 
 const providers = {
   google,
+  github,
 };
 
 module.exports = async (req) => {
@@ -11,4 +13,4 @@ module.exports = async (req) => {
   if (!provider) throw `Provider ${providerName} not found`;
 
   return await provider(req);
-}
+};
